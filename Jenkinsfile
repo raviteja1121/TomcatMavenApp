@@ -11,6 +11,9 @@ pipeline {
         }
         stage('build') {
             steps {
+            when {
+             tag 'release-3.0'
+             }
             sh 'mvn package'
         }
         }
